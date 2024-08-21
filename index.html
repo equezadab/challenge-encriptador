@@ -14,19 +14,27 @@
         <section>
             <textarea class="contenido__ingreso" cols="30" rows="10" name="" id="" placeholder="Ingrese el texto aqui"></textarea>
             <div>
-                <h1 class="contenido__advertencia">Solo letras minúsculas y sin acentos</h1>
+                <h1 class="contenido__advertencia"> <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                    <path fill="currentColor" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2a1 1 0 0 0 0-2"/>
+                </svg>Solo letras minúsculas y sin acentos</h1>
             </div>
             <div class="botones">
-                <button class="boton__encriptar">Encriptar</button>
-                <button class="boton__desencriptar">Desencriptar</button>
+                <button onclick="encriptar()" class="boton__encriptar">Encriptar</button>
+                <button onclick="desencriptar()" class="boton__desencriptar">Desencriptar</button>
             </div>
         </section>
-        <section>
-            <textarea class="contenido__salida" cols="20" rows="10" name="" id=""></textarea>
+        <section class="contenido__mensaje">
+            <textarea  id="contenidoSalida" class="contenido__salida" cols="20" rows="10" name="" id=""></textarea>
+            <img id="imagen" src="./assets/imagen/Muñeco.png" alt="">
+            <div id="mensaje" class="mensaje">
+                <h1>Ningún mensaje fue encontrado</h1>
+                <h2>Ingresa el texto que desees encriptar o desencriptar</h2>
+            </div>
             <div>
-                <button class="boton__copiar">Copiar</button>
+                <button  id="botonCopiar" onclick="copiarTexto()" class="boton__copiar" style="display: none;">Copiar</button>
             </div>
         </section>
     </main>
+    <script src="./script.js"></script>
 </body>
 </html>
