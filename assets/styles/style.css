@@ -152,3 +152,42 @@ main{
     transform: translateX(-50%);
     z-index: 10; /* Asegura que el botón esté por encima de otros elementos */
 }
+
+@media (max-width: 768px) {
+    *{
+        font-size: 20px;
+    }
+    main {
+        flex-direction: column; 
+        align-items: stretch; 
+        margin-bottom: 10px;
+        margin-left: 20px;
+        padding: 0 10px;
+    }
+    
+    .contenido__mensaje {
+        margin-top: 20px; 
+        height: 133px;
+        width: 688px;
+        margin: auto;
+    }
+    .contenido__mensaje h1{
+        font-size: 24px;
+    }
+
+    .contenido__mensaje img {
+        display: none;
+    }
+    
+    .botones {
+        max-width: 600px;
+    }
+    .contenido__advertencia{
+        font-size: 10px;
+    }
+    .boton__encriptar, .boton__desencriptar {
+        width: 210px; 
+        height: 50px;
+        font-size: 16px;
+    }
+}
