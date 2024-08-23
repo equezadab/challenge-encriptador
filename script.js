@@ -5,8 +5,18 @@ const botonEncriptar = document.querySelector('.boton__encriptar');
 const botonDesencriptar = document.querySelector('.boton__desencriptar');
 const botonCopiar = document.querySelector('.boton__copiar');
 
+function contieneMayusculasOAcentos(texto) {
+    return /[A-ZÁÉÍÓÚáéíóú]/.test(texto);
+}
+
 function encriptar() {
-    const input = document.querySelector('.contenido__ingreso').value;
+    const input = inputTexto.value;
+
+    if (contieneMayusculasOAcentos(input)) {
+        mostrarModal(); 
+        return; 
+    }
+
     let output = input
         .replace(/e/g, 'enter')
         .replace(/i/g, 'imes')
@@ -14,12 +24,18 @@ function encriptar() {
         .replace(/o/g, 'ober')
         .replace(/u/g, 'ufat');
     
-    document.getElementById('contenidoSalida').value = output;
+    outputTexto.value = output;
     mostrarResultado();
 }
 
 function desencriptar() {
-    const input = document.querySelector('.contenido__ingreso').value;
+    const input = inputTexto.value;
+
+    if (contieneMayusculasOAcentos(input)) {
+        mostrarModal(); 
+        return; 
+    }
+
     let output = input
         .replace(/enter/g, 'e')
         .replace(/imes/g, 'i')
@@ -27,25 +43,28 @@ function desencriptar() {
         .replace(/ober/g, 'o')
         .replace(/ufat/g, 'u');
     
-    document.getElementById('contenidoSalida').value = output;
+    outputTexto.value = output;
     mostrarResultado();
 }
 
 function copiarTexto() {
-    const contenido = document.querySelector('.contenido__salida');
-    contenido.select();
+    outputTexto.select();
     document.execCommand('copy');
 }
 
 function mostrarResultado() {
-    // Mostrar el botón de copiar
-    const botonCopiar = document.getElementById('botonCopiar');
     botonCopiar.style.display = 'block';
-
-    // Ocultar imagen, título y subtítulo
     document.getElementById('imagen').style.display = 'none';
     document.getElementById('mensaje').style.display = 'none';
+    outputTexto.style.display = 'block';
+}
 
-    // Asegurar que el textarea de salida esté visible
-    document.getElementById('contenidoSalida').style.display = 'block';
+function mostrarModal() {
+    const modal = document.getElementById('modalAlerta');
+    modal.style.display = 'block';
+}
+
+function cerrarModal() {
+    const modal = document.getElementById('modalAlerta');
+    modal.style.display = 'none';
 }

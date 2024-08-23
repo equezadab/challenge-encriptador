@@ -86,7 +86,6 @@ main{
     font-family: "Inter", sans-serif;
     font-weight: 700;
     font-size: 24px;
-    line-height: 120%;
     color: #343a40;
     margin-bottom: 10px;
     background-color: white;
@@ -96,7 +95,6 @@ main{
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 150%;
     color: #495057;
     background-color: white;
 }
@@ -105,12 +103,12 @@ main{
     color: #495057;
     font-size: 18px;
     display: flex;
-    align-items: center; /* Alinea el ícono y el texto verticalmente */
+    align-items: center; 
 }
 .contenido__advertencia svg {
-    width: 18px; /* Tamaño del ícono */
+    width: 18px; 
     height: 18px;
-    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    margin-right: 8px;
 }
 .botones{
     display: flex;
@@ -152,19 +150,69 @@ main{
 
 footer {
     position: relative;
-    text-align: center;
+    text-align: start;
     padding: 10px;
-    flex-shrink: 0; /* El footer no se encoge */
+    flex-shrink: 0;
     color: #0A3871;
-    font-size: 22px;
+    font-size: 18px;
     width: 600px;  
     height: 45px;
-    border: #0A3871 1px solid;
     border-radius: 16px;
     overflow: hidden; 
-    margin: auto;
     margin-top: 15px;
 }
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #0A3871;
+    width: 80%; 
+    max-width: 400px; 
+    border-radius: 8px;
+    position: relative;
+    z-index: 1001; 
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+}
+.modal-content p{
+    color: #0A3871;
+    font-size: 30px;
+    background-color: white;
+}
+
+.close-button {
+    color: #0A3871;
+    border: 1px solid #0A3871;
+    border-radius: 14px;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    background-color: #cbc9c9;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
     *{
         font-size: 24px;
@@ -182,7 +230,6 @@ footer {
     .contenido__mensaje {
         width: 100%; 
         height: auto; 
-        min-height: max-content;
         margin: auto;
         padding: 10px; 
     }
@@ -208,6 +255,8 @@ footer {
         width: auto;  
         height: auto;
         margin: 10px;
+        text-align: center;
+        margin: auto;
     }
 }
 
@@ -231,7 +280,6 @@ footer {
     .contenido__mensaje {
         width: 100%; 
         height: auto; 
-        min-height: max-content;
         margin: auto;
         padding: 10px;
         box-sizing: border-box; 
@@ -266,5 +314,7 @@ footer {
         width: auto;  
         height: auto;
         margin: 10px;
+        text-align: center;
+        margin: auto;
     }
 }
